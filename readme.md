@@ -144,6 +144,17 @@ input: config/log.yml
 
 最終的なpipeline.ymlは以下のように実装する。
 ```yaml
+processors:
+- grok:
+    field: message
+    patterns: 
+      - "%{TIMESTAMP:timestamp} %{GREEDYDATA:other}"
+    pattern_definitions:
+      TIMESTAMP: "%{YEAR}-[0-9]{2}-[0-9]{2} %{TIME}"
+- dissect:
+    field: other
+    pattern: "%{host_name}[%{process_id}] %{log_type}: %{log_data}"
+
 ```
 
 <h2 id="content6">pipelineの検討方法</h2>  
