@@ -39,6 +39,7 @@ index名：webServer_index
 |2023-01-01 11:00:00|hp00001aa|543|Response|199.20.11.44|ms0000001|404|fail|100|error connect|
 |2023-01-03 10:00:00|hp00001ac|23123|Response|199.20.13.34|ms0000002|501|success|80|-|
 |2023-01-03 12:00:00|hp00001ac|454777|Response|199.20.13.54|ms0000005|503|success|60|-|  
+
 ※statusがsuccessの場合、messageは空  
 
 |@timestamp|host_name|process_id|log_type|srcip|module_name|status_code|status|access_time|message|  
@@ -51,6 +52,7 @@ index名：webServer_index
 |-|-|-|-|-|-|-|-|
 |2023-01-01 12:00:00|hp00001aa|7890|login|199.20.11.43|rtanaka|OK|-|
 |2023-01-02 12:00:00|hp00001ab|3543|login|199.20.12.11|rtanaka|NG|Password faiid|
+
 ※resultがOKの場合、messageは空  
 
 上記のように、1つのindexに複数種類あるWebサーバのログを登録する。  
